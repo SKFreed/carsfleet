@@ -4,8 +4,13 @@ namespace App\Http\Controllers;
 
 use App\Park;
 use App\User;
+use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Contracts\View\Factory;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\View\View;
 
 class ParkController extends Controller
 {
@@ -16,7 +21,7 @@ class ParkController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * @return Application|Factory|View
      */
     public function index()
     {
@@ -54,8 +59,8 @@ class ParkController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\RedirectResponse
+     * @param Request $request
+     * @return RedirectResponse
      */
     public function store(Request $request)
     {
@@ -72,7 +77,7 @@ class ParkController extends Controller
      * Display the specified resource.
      *
      * @param  int  $id
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * @return Application|Factory|View
      */
     public function show(Park $park)
     {
@@ -84,7 +89,7 @@ class ParkController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return Application|Factory|View
      */
     public function edit(Park $park)
     {
@@ -95,9 +100,9 @@ class ParkController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param Request $request
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return RedirectResponse
      */
     public function update(Request $request, Park $park)
     {
@@ -115,8 +120,8 @@ class ParkController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Park $park
-     * @return \Illuminate\Http\Response
+     * @param Park $park
+     * @return Response
      */
     public function destroy(Park $park)
     {
