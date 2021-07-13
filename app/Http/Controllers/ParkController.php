@@ -55,7 +55,7 @@ class ParkController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function store(Request $request)
     {
@@ -65,7 +65,7 @@ class ParkController extends Controller
         $park->schedule = $request->schedule;
         $park->save();
 
-        return view('welcome');
+        return redirect()->route('park.index');
     }
 
     /**

@@ -14,12 +14,14 @@ class CarController extends Controller
     {
         $this->middleware('auth');
     }
+
     /**
      * Display a listing of the resource.
      *
+     * @param int $parkId
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function index($parkId)
+    public function index(int $parkId)
     {
         $idPark = Park::find($parkId)->id;
         $namePark = Park::find($parkId)->name;
@@ -56,7 +58,7 @@ class CarController extends Controller
      *
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function create($idPark)
+    public function create(int $idPark)
     {
         $idPar = Park::find($idPark)->id;
         return view('car.create',compact('idPar'));
@@ -66,9 +68,9 @@ class CarController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * @return \Illuminate\Http\RedirectResponse
      */
-    public function store(Request $request, $idPark)
+    public function store(Request $request, int $idPark)
     {
         $car = new Car();
         $carId = Park::find($idPark)->id;
@@ -80,7 +82,7 @@ class CarController extends Controller
         $car->driver = $request->driver;
         $car->save();
 
-        return view('/home');
+        return redirect()->route('park.index');
     }
 
     /**
