@@ -1,0 +1,54 @@
+.park-form
+{
+    color: #1f6fb2;
+}
+
+.park-form input
+{
+    margin-bottom: 25px;
+    width: 50%;
+    display: inline-block;
+
+}
+
+.park-form label
+{
+    width: 15%;
+}
+
+hr {
+    border: none; /* Убираем границу */
+    background-color: #1f6fb2; /* Цвет линии */
+    height: 2px; /* Толщина линии */
+}
+
+.car-form
+{
+    color: #1f6fb2;
+    margin-left: 20%;
+    display: inline-block;
+}
+
+.car-center input
+{
+    margin-bottom: 25px;
+    width: 90%;
+    display: block;
+}
+
+.car-center
+{
+    color: #1f6fb2;
+    margin-left: 15%;
+}
+
+.car-line
+{
+
+    display: inline-block;
+    width: 30%;
+}
+h4
+{
+    color: #1f6fb2;
+}
