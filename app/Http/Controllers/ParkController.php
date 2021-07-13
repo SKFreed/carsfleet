@@ -61,6 +61,8 @@ class ParkController extends Controller
     {
         $park = new Park();
         $park->name = $request->name;
+        $park->address = $request->address;
+        $park->schedule = $request->schedule;
         $park->save();
 
         return view('welcome');

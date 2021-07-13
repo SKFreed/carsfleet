@@ -14,12 +14,10 @@
                 <div class="car-line">
                     {{ Form::label('driver', 'Имя водителя') }}
                     {{ Form::text('driver','',array('class' => 'form-control')) }}
-                    {{ Form::text('driver1','',array('class' => 'form-control')) }}
                 </div>
                 <div class="car-line">
                     {{ Form::label('number', 'Номер машины') }}
                     {{ Form::text('number','',array('class' => 'form-control')) }}
-                    {{ Form::text('number1','',array('class' => 'form-control')) }}
                 </div>
             </div>
 

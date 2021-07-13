@@ -40,8 +40,7 @@ class CarController extends Controller
         }
         else
         {
-            $parks = Park::find($parkId)->cars()->paginate(100);
-            //$parks = Car::where('park_id',$parkId && 'user_id', $userId )->paginate(100);
+            $parks = Park::find($parkId)->cars()->where('user_id', $userId)->paginate(100);
         }
 
         return view('car.index', compact('parks', 'namePark','idPark'));
@@ -71,30 +70,15 @@ class CarController extends Controller
      */
     public function store(Request $request, $idPark)
     {
-        $park = new Car();
-        $parkId = Park::find($idPark)->id;
-       // $UserId = User::find($idPark)->id;
+        $car = new Car();
+        $carId = Park::find($idPark)->id;
 
-        $park->park_id=$parkId;
+        $car->park_id=$carId;
         $userId = Auth::user()->id;
-        $park->user_id=$userId;
-        $park->number = $request->number;
-        $park->driver = $request->driver;
-
-        $park->save();
-
-        $park1 = new Car();
-        $parkId = Park::find($idPark)->id;
-        // $UserId = User::find($idPark)->id;
-
-        $park1->park_id=$parkId;
-        $userId = Auth::user()->id;
-        $park1->user_id=$userId;
-        $park1->number = $request->number1;
-        $park1->driver = $request->driver1;
-
-        $park1->save();
-
+        $car->user_id=$userId;
+        $car->number = $request->number;
+        $car->driver = $request->driver;
+        $car->save();
 
         return view('/home');
     }

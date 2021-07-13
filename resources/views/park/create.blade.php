@@ -14,8 +14,8 @@
                 {{ Form::text('name','',array('class' => 'form-control')) }}
             </div>
             <div class="park-input">
-                {{ Form::label('asdress', 'Адрес') }}
-                {{ Form::text('asdress','',array('class' => 'form-control')) }}
+                {{ Form::label('adress', 'Адрес') }}
+                {{ Form::text('address','',array('class' => 'form-control')) }}
             </div>
             <div class="park-input">
                 {{ Form::label('schedule', 'График работы') }}
