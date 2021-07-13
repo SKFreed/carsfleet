@@ -21,7 +21,6 @@
                 </div>
             </div>
 
-
             <div class="well well-sm clearfix">
                 <button class="btn btn-success pull-right" type="submit">Добавить</button>
             </div>
