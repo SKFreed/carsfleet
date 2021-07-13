@@ -4,6 +4,9 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * @method static find(int $parkId)
+ */
 class Park extends Model
 {
     protected $fillable = ['name', 'address', 'shedule'];
